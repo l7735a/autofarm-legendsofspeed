@@ -41,16 +41,16 @@ while wait(_G.Settings.Delay) do
         var4.Jump = true
     end
 	for _,var3 in var1:GetDescendants() do
-	 	if var3.Name == "Blue Orb" then
-			var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
-	 	elseif var3.Name == "Red Orb" then
-	 		var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
-	 	elseif var3.Name == "Orange Orb" then
-			var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
-    	elseif var3.Name == "Yellow Orb" then
-    		var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
-		elseif var3.Name == "Gem" then 
-			var2:MoveTo(var3.outerGem.Position - Vector3.new(_G.Settings.Offset))
-		end
+        if var3.Name == "Blue Orb" then
+		    var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+	    elseif var3.Name == "Red Orb" then
+	    	var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+	    elseif var3.Name == "Orange Orb" then
+	    	var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+        elseif var3.Name == "Yellow Orb" then
+        	var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+	    elseif var3.Name == "Gem" then 
+	    	var2:MoveTo(var3.outerGem.Position - Vector3.new(_G.Settings.Offset))
+        end
     end
 end
