@@ -1,0 +1,56 @@
+--[[
+Hello everyone, im just gonna say that this is a Legends Of Speed autofarm.
+Anyways, hope y'all have fun.
+Not the best autofarm but it still works ig..
+--]]
+--> SETTINGS
+_G.Settings = {
+    --> MAPS
+    Map = "City";
+    --[[ MAP CHOICES
+        Legends Highway
+        Magma City
+        Snow City
+        City
+    --]]
+    --> MAIN SETTINGS
+	Delay = 0.01; --autofarm delay
+	Offset = 0,8,0; --autofarm offset
+	StandStill = true; --true or false
+    --> FUN SETTINGS
+    Spinning = false; -- spins your character (DOESNT WORK)
+    SpinSpeed = 100; -- change the speed of the spin (DOESNT WORK)
+    Kangoroo = false; -- keeps jumping, also a lil bit buggy if you enable it.
+    --> ADMIN COMMANDS
+    InfYield = false;
+    CMDX = false
+}
+--> VARIABLES
+local var1 = workspace.orbFolder[_G.Settings.Map]
+local var2 = game.Players.LocalPlayer.Character
+local var4 = var2.Humanoid
+--> AUTOFARM ( DO NOT CHANGE ANYTHING )	
+var4.PlatformStand = _G.Settings.StandStill
+if _G.Settings.InfYield == true then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+elseif _G.Settings.CMDX == true then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end
+while wait(_G.Settings.Delay) do
+    if _G.Settings.KeepJumping == true then
+        var4.Jump = true
+    end
+	for _,var3 in var1:GetDescendants() do
+	 	if var3.Name == "Blue Orb" then
+			var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+	 	elseif var3.Name == "Red Orb" then
+	 		var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+	 	elseif var3.Name == "Orange Orb" then
+			var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+    	elseif var3.Name == "Yellow Orb" then
+    		var2:MoveTo(var3.outerOrb.Position - Vector3.new(_G.Settings.Offset))
+		elseif var3.Name == "Gem" then 
+			var2:MoveTo(var3.outerGem.Position - Vector3.new(_G.Settings.Offset))
+		end
+    end
+end
